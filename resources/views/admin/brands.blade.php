@@ -38,7 +38,7 @@
                                     <div class="wg-table table-all-user">
                                         <div class="table-responsive">
                                             @if(Session::has('status'))
-                                                <p class="alert alert.success">{{Session::get('status')}}</p>
+                                                <p class="alert alert-success">{{Session::get('status')}}</p>
                                             @endif
                                             <table class="table table-striped table-bordered">
                                                 <thead>
@@ -66,7 +66,7 @@
                                                         <td><a href="#" target="_blank">0</a></td>
                                                         <td>
                                                             <div class="list-icon-function">
-                                                                <a href="#">
+                                                                <a href="{{route('admin.brand.edit',['id'=>$brand->id])}}">
                                                                     <div class="item edit">
                                                                         <i class="icon-edit-3"></i>
                                                                     </div>

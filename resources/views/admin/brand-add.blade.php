@@ -35,12 +35,12 @@
                     <div class="body-title">Brand Name <span class="tf-color-1">*</span></div>
                     <input class="flex-grow" type="text" placeholder="Brand name" name="name" tabindex="0" value="{{old('name')}}" aria-required="true" required="">
                 </fieldset>
-                @error('name')<span class="alert alert.danger text-center">{{$message}}</span>@enderror
+                @error('name')<span class="alert alert-danger text-center">{{$message}}</span>@enderror
                 <fieldset class="name">
                     <div class="body-title">Brand Slug <span class="tf-color-1">*</span></div>
                     <input class="flex-grow" type="text" placeholder="Brand Slug" name="slug" tabindex="0" value="{{old('slug')}}" aria-required="true" required="">
                 </fieldset>
-                @error('slug')<span class="alert alert.danger text-center">{{$message}}</span>@enderror
+                @error('slug')<span class="alert alert-danger text-center">{{$message}}</span>@enderror
                 <fieldset>
                     <div class="body-title">Upload images <span class="tf-color-1">*</span>
                     </div>
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                 </fieldset>
-                @error('image')<span class="alert alert.danger text-center">{{$message}}</span>@enderror
+                @error('image')<span class="alert alert-danger text-center">{{$message}}</span>@enderror
                 <div class="bot">
                     <div></div>
                     <button class="tf-button w208" type="submit">Save</button>
