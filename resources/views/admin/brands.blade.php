@@ -71,7 +71,9 @@
                                                                         <i class="icon-edit-3"></i>
                                                                     </div>
                                                                 </a>
-                                                                <form action="#" method="POST">
+                                                                <form action="{{route('admin.brand.delete',['id'=>$brand->id])}}" method="POST">
+                                                                    @csrf
+                                                                    @method('DELETE')
                                                                     <div class="item text-danger delete">
                                                                         <i class="icon-trash-2"></i>
                                                                     </div>
@@ -93,3 +95,25 @@
                             </div>
                         </div>
 @endsection
+
+@push('scripts')
+    <script>
+        $(function(){
+            $('.delete').on('click',function(e){
+                e.preventDefault();
+                var form = $(this).closest('form');
+                swal({
+                    title: "Are you sure?",
+                    text: "Do you want to delete this record?",
+                    type:"warning",
+                    buttons:["No","Yes"],
+                    confirmButtonColor: '#dc3545'
+                }).then(function(result){
+                    if(result){
+                        form.submit();
+                    }
+                });
+            });
+        });
+    </script>
+@endpush
