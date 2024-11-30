@@ -129,59 +129,58 @@
             }'>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/category_1.png')}}" width="124"
+                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/Art.png')}}" width="124"
                   height="124" alt="" />
                 <div class="text-center">
-                  <a href="#" class="menu-link fw-medium">Women<br />Tops</a>
+                  <a href="#" class="menu-link fw-medium">Art<br />Supplies</a>
                 </div>
               </div>
               <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/category_2.png')}}" width="124"
-                  height="124" alt="" />
+                <img loading="lazy" class="w-100 h-auto mb-3"  src="{{asset('assets/images/home/demo3/Write.png')}}"  width="124"  height="124"  alt="" />
                 <div class="text-center">
-                  <a href="#" class="menu-link fw-medium">Women<br />Pants</a>
+                  <a href="#" class="menu-link fw-medium">Writing<br />Tools</a>
                 </div>
               </div>
               <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/category_3.png')}}" width="124"
+                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/globe1.png')}}" width="124"
                   height="124" alt="" />
                 <div class="text-center">
-                  <a href="#" class="menu-link fw-medium">Women<br />Clothes</a>
+                  <a href="#" class="menu-link fw-medium">Educational<br />Tools</a>
                 </div>
               </div>
               <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/category_4.png')}}" width="124"
+                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/organization.png')}}" width="124"
                   height="124" alt="" />
                 <div class="text-center">
-                  <a href="#" class="menu-link fw-medium">Men<br />Jeans</a>
+                  <a href="#" class="menu-link fw-medium">Organization<br />Supplies</a>
                 </div>
               </div>
               <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/category_5.png')}}" width="124"
+                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/tab.png')}}" width="124"
                   height="124" alt="" />
                 <div class="text-center">
-                  <a href="#" class="menu-link fw-medium">Men<br />Shirts</a>
+                  <a href="#" class="menu-link fw-medium">Technology<br />for Learning</a>
                 </div>
               </div>
               <div class="swiper-slide">
                 <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/category_6.png')}}" width="124"
                   height="124" alt="" />
                 <div class="text-center">
-                  <a href="#" class="menu-link fw-medium">Men<br />Shoes</a>
+                  <a href="#" class="menu-link fw-medium">Decorative<br />Stationaries</a>
                 </div>
               </div>
               <div class="swiper-slide">
                 <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/category_7.png')}}" width="124"
                   height="124" alt="" />
                 <div class="text-center">
-                  <a href="#" class="menu-link fw-medium">Women<br />Dresses</a>
+                  <a href="#" class="menu-link fw-medium">Classroom<br />Accessories</a>
                 </div>
               </div>
               <div class="swiper-slide">
                 <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/category_8.png')}}" width="124"
                   height="124" alt="" />
                 <div class="text-center">
-                  <a href="#" class="menu-link fw-medium">Kids<br />Tops</a>
+                  <a href="#" class="menu-link fw-medium">Creative<br />Play tools</a>
                 </div>
               </div>
             </div><!-- /.swiper-wrapper -->
