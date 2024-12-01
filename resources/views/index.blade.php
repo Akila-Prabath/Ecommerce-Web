@@ -37,20 +37,20 @@
 
         <div class="swiper-slide">
           <div class="overflow-hidden position-relative h-100">
-            <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-              <img loading="lazy" src="{{asset('assets/images/slideshow-character1.png')}}" width="400" height="733"
+            <div class="slideshow-character position-absolute bottom-25 pos_right-center">
+              <img loading="lazy" src="{{asset('assets/images/b8666816cb9ead0fc740798278a8cac5.png')}}" width="500" height="900"
                 alt="Woman Fashion 1"
                 class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
               <div class="character_markup">
-                <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Summer
+                <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Notebooks
                 </p>
               </div>
             </div>
             <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
               <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
                 New Arrivals</h6>
-              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
-              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
+              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Find Your Perfect</h2>
+              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Notebook</h2>
               <a href="#"
                 class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
                 Now</a>
@@ -87,7 +87,7 @@
     <div class="container mw-1620 bg-white border-radius-10">
       <div class="mb-3 mb-xl-5 pt-1 pb-4"></div>
       <section class="category-carousel container">
-        <h2 class="section-title text-center mb-3 pb-xl-2 mb-xl-4">You Might Like</h2>
+        <h2 class="section-title text-center mb-3 pb-xl-2 mb-xl-4">Shop by Category</h2>
 
         <div class="position-relative">
           <div class="swiper-container js-swiper-slider" data-settings='{
@@ -163,21 +163,21 @@
                 </div>
               </div>
               <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/category_6.png')}}" width="124"
+                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/717kRfY0y1L._AC_UF1000,1000_QL80_-modified.png')}}" width="124"
                   height="124" alt="" />
                 <div class="text-center">
                   <a href="#" class="menu-link fw-medium">Decorative<br />Stationaries</a>
                 </div>
               </div>
               <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/category_7.png')}}" width="124"
+                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/heap-various-school-stuff-modified.png')}}" width="124"
                   height="124" alt="" />
                 <div class="text-center">
                   <a href="#" class="menu-link fw-medium">Classroom<br />Accessories</a>
                 </div>
               </div>
               <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/category_8.png')}}" width="124"
+                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/infant_toys_1_2-modified.png')}}" width="124"
                   height="124" alt="" />
                 <div class="text-center">
                   <a href="#" class="menu-link fw-medium">Creative<br />Play tools</a>
