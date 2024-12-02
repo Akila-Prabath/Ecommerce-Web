@@ -129,14 +129,14 @@
             }'>
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/Art.png')}}" width="124"
+                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/arrt.png')}}" width="124"
                   height="124" alt="" />
                 <div class="text-center">
                   <a href="#" class="menu-link fw-medium">Art<br />Supplies</a>
                 </div>
               </div>
               <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3"  src="{{asset('assets/images/home/demo3/Write.png')}}"  width="124"  height="124"  alt="" />
+                <img loading="lazy" class="w-100 h-auto mb-3"  src="{{asset('assets/images/home/demo3/pensils.png')}}"  width="124"  height="124"  alt="" />
                 <div class="text-center">
                   <a href="#" class="menu-link fw-medium">Writing<br />Tools</a>
                 </div>
@@ -162,22 +162,25 @@
                   <a href="#" class="menu-link fw-medium">Technology<br />for Learning</a>
                 </div>
               </div>
+            <!-- changed -->
               <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/717kRfY0y1L._AC_UF1000,1000_QL80_-modified.png')}}" width="124"
+
+                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/deco.png')}}" width="124"
                   height="124" alt="" />
                 <div class="text-center">
                   <a href="#" class="menu-link fw-medium">Decorative<br />Stationaries</a>
                 </div>
               </div>
               <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/heap-various-school-stuff-modified.png')}}" width="124"
+                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/markers.png')}}" width="124"
+
                   height="124" alt="" />
                 <div class="text-center">
                   <a href="#" class="menu-link fw-medium">Classroom<br />Accessories</a>
                 </div>
               </div>
               <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/infant_toys_1_2-modified.png')}}" width="124"
+                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/playtools.png')}}" width="124"
                   height="124" alt="" />
                 <div class="text-center">
                   <a href="#" class="menu-link fw-medium">Creative<br />Play tools</a>
