@@ -162,6 +162,7 @@
                   <a href="#" class="menu-link fw-medium">Technology<br />for Learning</a>
                 </div>
               </div>
+            <!-- changed -->
               <div class="swiper-slide">
                 <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/deco.png')}}" width="124"
                   height="124" alt="" />
