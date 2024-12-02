@@ -32,7 +32,7 @@
                             </div>
                         </form>
                     </div>
-                    <a class="tf-button style-1 w208" href="#"><i class="icon-plus"></i>Add
+                    <a class="tf-button style-1 w208" href="{{route('admin.category.add')}}"><i class="icon-plus"></i>Add
                         new</a>
                 </div>
                 <div class="wg-table table-all-user">
@@ -56,7 +56,7 @@
                                         <td>{{ $category->id }}</td>
                                         <td class="pname">
                                             <div class="image">
-                                                <img src="{{ asset('uploads/brands') }}/{{ $category->image }}"
+                                                <img src="{{ asset('uploads/categories') }}/{{ $category->image }}"
                                                     alt="{{ $category->name }}" class="image">
                                             </div>
                                             <div class="name">
