@@ -43,7 +43,7 @@
                         <table class="table table-striped table-bordered">
                             <thead>
                                 <tr>
-                                    <th>#</th>
+                                  <!--  <th>#</th> -->
                                     <th>Name</th>
                                     <th>Slug</th>
                                     <th>Products</th>
@@ -53,7 +53,7 @@
                             <tbody>
                                 @foreach ($categories as $category)
                                     <tr>
-                                        <td>{{ $category->id }}</td>
+                                      <!--  <td>{{ $category->id }}</td> -->
                                         <td class="pname">
                                             <div class="image">
                                                 <img src="{{ asset('uploads/categories') }}/{{ $category->image }}"

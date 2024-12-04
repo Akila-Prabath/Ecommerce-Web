@@ -42,9 +42,9 @@
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Price</th>
+                          <!--  <th>#</th> -->
+                            <th style="width: 300px">Name</th>
+                            <th style="width: 100px">Price</th>
                             <th>SalePrice</th>
                             <th>SKU</th>
                             <th>Category</th>
@@ -58,7 +58,7 @@
                     <tbody>
                         @foreach ($products as $product)
                         <tr>
-                            <td>{{$product->id}}</td>
+                          <!--  <td>{{$product->id}}</td> -->
                             <td class="pname">
                                 <div class="image">
                                     <img src="{{asset('uploads/products/thumbnails')}}/{{$product->image}}" alt="{{$product->name}}" class="image">
@@ -68,8 +68,8 @@
                                     <div class="text-tiny mt-3">{{$product->slug}}</div>
                                 </div>
                             </td>
-                            <td>${{$product->regular_price}}</td>
-                            <td>${{$product->sale_price}}</td>
+                            <td>Rs. {{$product->regular_price}}</td>
+                            <td>Rs. {{$product->sale_price}}</td>
                             <td>{{$product->SKU}}</td>
                             <td>{{$product->category->name}}</td>
                             <td>{{$product->brand->name}}</td>
