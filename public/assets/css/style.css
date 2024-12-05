@@ -7680,6 +7680,10 @@ th[align="right"] {
   .col-lg-auto {
     flex: 0 0 auto;
     width: auto; }
+  
+  .col-lg-0-5 {
+    flex: 0 0 auto;
+    width: 4.16666666667%; }
 
   .col-lg-1 {
     flex: 0 0 auto;
