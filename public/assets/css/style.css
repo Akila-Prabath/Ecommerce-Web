@@ -2638,6 +2638,9 @@ progress {
 .bottom-0 {
   bottom: 0 !important; }
 
+.bottom-25 {
+  bottom: 25% !important; }
+  
 .bottom-50 {
   bottom: 50% !important; }
 
@@ -7677,6 +7680,10 @@ th[align="right"] {
   .col-lg-auto {
     flex: 0 0 auto;
     width: auto; }
+  
+  .col-lg-0-5 {
+    flex: 0 0 auto;
+    width: 4.16666666667%; }
 
   .col-lg-1 {
     flex: 0 0 auto;
