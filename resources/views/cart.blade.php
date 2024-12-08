@@ -69,7 +69,7 @@
                   </div>
                 </td>
                 <td>
-                  <span class="shopping-cart__subtotal">${{$item->subTotal}}</span>
+                  <span class="shopping-cart__subtotal">${{$item->subtotal}}</span>
                 </td>
                 <td>
                   <a href="#" class="remove-cart">
