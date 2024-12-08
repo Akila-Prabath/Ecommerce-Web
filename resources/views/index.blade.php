@@ -128,64 +128,15 @@
               }
             }'>
             <div class="swiper-wrapper">
+              @foreach ($categories as $category)
               <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/arrt.png')}}" width="124"
+                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('uploads/categories')}}/{{$category->image}}" width="124"
                   height="124" alt="" />
                 <div class="text-center">
-                  <a href="#" class="menu-link fw-medium">Art<br />Supplies</a>
+                  <a href="{{route('shop.index',['categories'=>$category->id])}}" class="menu-link fw-medium">{{$category->name}}</a>
                 </div>
               </div>
-              <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3"  src="{{asset('assets/images/home/demo3/pensils.png')}}"  width="124"  height="124"  alt="" />
-                <div class="text-center">
-                  <a href="#" class="menu-link fw-medium">Writing<br />Tools</a>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/globe1.png')}}" width="124"
-                  height="124" alt="" />
-                <div class="text-center">
-                  <a href="#" class="menu-link fw-medium">Educational<br />Tools</a>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/organization.png')}}" width="124"
-                  height="124" alt="" />
-                <div class="text-center">
-                  <a href="#" class="menu-link fw-medium">Organization<br />Supplies</a>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/tab.png')}}" width="124"
-                  height="124" alt="" />
-                <div class="text-center">
-                  <a href="#" class="menu-link fw-medium">Technology<br />for Learning</a>
-                </div>
-              </div>
-            <!-- changed -->
-              <div class="swiper-slide">
-
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/deco.png')}}" width="124"
-                  height="124" alt="" />
-                <div class="text-center">
-                  <a href="#" class="menu-link fw-medium">Decorative<br />Stationaries</a>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/markers.png')}}" width="124"
-
-                  height="124" alt="" />
-                <div class="text-center">
-                  <a href="#" class="menu-link fw-medium">Classroom<br />Accessories</a>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <img loading="lazy" class="w-100 h-auto mb-3" src="{{asset('assets/images/home/demo3/playtools.png')}}" width="124"
-                  height="124" alt="" />
-                <div class="text-center">
-                  <a href="#" class="menu-link fw-medium">Creative<br />Play tools</a>
-                </div>
-              </div>
+              @endforeach
             </div><!-- /.swiper-wrapper -->
           </div><!-- /.swiper-container js-swiper-slider -->
 
