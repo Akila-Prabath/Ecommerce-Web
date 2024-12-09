@@ -13,7 +13,8 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "laravel/ui": "*",
-        "livewire/livewire": "^3.0"
+        "livewire/livewire": "^3.0",
+        "surfsidemedia/shoppingcart": "^1.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
