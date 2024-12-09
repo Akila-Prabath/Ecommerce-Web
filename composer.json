@@ -6,7 +6,8 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "intervention/image-laravel":"^1.2",
+        "intervention/image": "^3.9",
+        "intervention/image-laravel": "^1.2",
         "laravel/fortify": "*",
         "laravel/framework": "^11.9",
         "laravel/jetstream": "^5.3",
