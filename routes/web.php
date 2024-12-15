@@ -41,6 +41,8 @@ Route::delete('/cart/clear', [CartController::class, 'empty_cart'])->name('cart.
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/account-dashboard', [UserController::class, 'index'])->name('user.index');
+    Route::get('/account-details', [UserController::class, 'account_details'])->name('user.account-details');
+    Route::put('/account-details/update', [UserController::class, 'update'])->name('user.account-details.update');
 });
 
 Route::middleware(['auth',AuthAdmin::class])->group(function(){
