@@ -150,24 +150,24 @@
                                     </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="users.html" class="">
+                                    <a href="{{route('admin.profile')}}" class="">
                                         <div class="icon"><i class="icon-user"></i></div>
-                                        <div class="text">User</div>
+                                        <div class="text">Profile</div>
                                     </a>
                                 </li>
 
-                                <li class="menu-item">
+                                <!--<li class="menu-item">
                                     <a href="settings.html" class="">
                                         <div class="icon"><i class="icon-settings"></i></div>
                                         <div class="text">Settings</div>
                                     </a>
-                                </li>
+                                </li>-->
 
                                 <li class="menu-item">
                                     <form method="POST" action="{{route('logout')}}" id="logout-form">
                                         @csrf
                                     <a href="{{route('logout')}}" class="" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                        <div class="icon"><i class="icon-settings"></i></div>
+                                        <div class="icon"><i class="icon-log-out"></i></div>
                                         <div class="text">Logout</div>
                                     </a>
                                     </form>
@@ -345,7 +345,7 @@
                         @yield('content')
                         
                         <div class="bottom-page">
-                            <div class="body-text">Copyright © 2024 SurfsideMedia</div>
+                            <div class="body-text">Copyright © 2024 BabyBabble</div>
                         </div>
                     </div>
 

@@ -7,10 +7,13 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Product;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Laravel\Facades\Image;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 
 class AdminController extends Controller
@@ -385,5 +388,33 @@ class AdminController extends Controller
         $query = $request->input('query');
         $results = Product::where('name','LIKE',"%{$query}%")->get()->take(8);
         return response()->json($results);
+    }
+
+    public function admin_profile(){
+        return view('admin.profile');
+    }
+
+    public function profile_update(Request $request)
+    {
+        $request->validate([
+            'name' => 'sometimes|string|max:255',
+            'old_password' => 'nullable|required_with:new_password,new_password_confirmation',
+            'new_password' => 'nullable|min:8|confirmed|required_with:old_password',
+        ]);
+
+        $user = User::find(Auth::user()->id);
+
+        if ($request->filled('name') && $request->name !== $user->name) {
+            $user->name = $request->name;
+        }
+
+        if ($request->filled('old_password') && $request->filled('new_password')) {
+            if (!Hash::check($request->old_password, $user->password)) {
+                return back()->withErrors(['old_password' => 'Your current password is incorrect.']);
+            }
+            $user->password = Hash::make($request->new_password);
+        }
+        $user->save();
+        return back()->with('status', 'Account details updated successfully!');
     }
 }
