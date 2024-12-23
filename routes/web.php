@@ -75,4 +75,5 @@ Route::middleware(['auth',AuthAdmin::class])->group(function(){
 
     Route::get('/admin/profile',[AdminController::class,'admin_profile'])->name('admin.profile');
     Route::put('/admin/profile/update',[AdminController::class,'profile_update'])->name('admin.profile.update');
+    Route::post('/admin/profile/photo',[AdminController::class,'profile_photo'])->name('admin.profile.photo');
 });

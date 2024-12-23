@@ -156,12 +156,12 @@
                                     </a>
                                 </li>
 
-                                <!--<li class="menu-item">
-                                    <a href="settings.html" class="">
-                                        <div class="icon"><i class="icon-settings"></i></div>
-                                        <div class="text">Settings</div>
+                                <li class="menu-item">
+                                    <a href="{{route('home.index')}}" class="">
+                                        <div class="icon"><i class="icon-home"></i></div>
+                                        <div class="text">Home</div>
                                     </a>
-                                </li>-->
+                                </li>
 
                                 <li class="menu-item">
                                     <form method="POST" action="{{route('logout')}}" id="logout-form">
@@ -207,7 +207,7 @@
                             </div>
                             <div class="header-grid">
 
-                                <div class="popup-wrap message type-header">
+                                <!--<div class="popup-wrap message type-header">
                                     <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button"
                                             id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -272,7 +272,7 @@
                                             <li><a href="#" class="tf-button w-full">View all</a></li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div>-->
 
 
 
@@ -283,10 +283,10 @@
                                             id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                                             <span class="header-user wg-user">
                                                 <span class="image">
-                                                    <img src="images/avatar/user-1.png" alt="">
+                                                    <img src="{{asset('images/avatar')}}/{{Auth::user()->profile_photo_path}}" alt="{{Auth::user()->name}}">
                                                 </span>
                                                 <span class="flex flex-column">
-                                                    <span class="body-title mb-2">Kristin Watson</span>
+                                                    <span class="body-title mb-2">{{Auth::user()->name}}</span>
                                                     <span class="text-tiny">Admin</span>
                                                 </span>
                                             </span>
@@ -294,7 +294,7 @@
                                         <ul class="dropdown-menu dropdown-menu-end has-content"
                                             aria-labelledby="dropdownMenuButton3">
                                             <li>
-                                                <a href="#" class="user-item">
+                                                <a href="{{route('admin.profile')}}" class="user-item">
                                                     <div class="icon">
                                                         <i class="icon-user"></i>
                                                     </div>
@@ -302,15 +302,15 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" class="user-item">
+                                                <a href="{{route('admin.contacts')}}" class="user-item">
                                                     <div class="icon">
                                                         <i class="icon-mail"></i>
                                                     </div>
                                                     <div class="body-title-2">Inbox</div>
-                                                    <div class="number">27</div>
+                                                    <div class="number"></div>
                                                 </a>
                                             </li>
-                                            <li>
+                                            <!--<li>
                                                 <a href="#" class="user-item">
                                                     <div class="icon">
                                                         <i class="icon-file-text"></i>
@@ -325,9 +325,9 @@
                                                     </div>
                                                     <div class="body-title-2">Support</div>
                                                 </a>
-                                            </li>
+                                            </li>-->
                                             <li>
-                                                <a href="login.html" class="user-item">
+                                                <a href="{{route('logout')}}" class="user-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                                     <div class="icon">
                                                         <i class="icon-log-out"></i>
                                                     </div>
