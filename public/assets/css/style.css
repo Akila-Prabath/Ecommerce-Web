@@ -876,6 +876,76 @@ progress {
     border-top-left-radius: 0;
     border-top-right-radius: 0; }
 
+ .container-icon {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    width: 90%;
+    max-width: 800px;
+  }
+
+.box-icon {
+  width: 150px;
+  height: 150px;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  margin-top: 30px;
+}
+.box-icon i {
+  font-size: 40px;
+  color: #555;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.box-icon p {
+  font-size: 16px;
+  color: #555;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.box-icon:hover {
+  border-color: #000000;
+}
+
+.box-icon:hover i,
+.box-icon:hover p {
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .box-icon {
+    height: 120px;
+  }
+  .box-icon i {
+    font-size: 24px;
+  }
+  .box-icon p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .box-icon {
+    height: 100px;
+  }
+  .box-icon i {
+    font-size: 20px;
+  }
+  .box-icon p {
+    font-size: 12px;
+  }
+}
+
 .navbar {
   position: relative;
   display: flex;
@@ -12117,8 +12187,9 @@ textarea.form-control-lg {
   display: inline-block;
   position: relative;
   padding: 0.5em 0;
-  color: #222222;
-  line-height: 1.5em; }
+  color: #555;
+  line-height: 1.0em;
+  font-size: medium; }
 
 .menu-link_us-s:after {
   content: '';
@@ -12131,7 +12202,8 @@ textarea.form-control-lg {
   transition: width 0.28s cubic-bezier(0.47, 0, 0.745, 0.715);
   background-color: currentColor; }
 .menu-link_us-s:hover:after, .menu-link_us-s.menu-link_active:after {
-  width: 2em; }
+  width: 2.5em;
+  color:#000; }
 
 .default-menu {
   position: absolute;
