@@ -199,7 +199,7 @@ class AdminController extends Controller
             'stock_status' => 'required',
             'featured' => 'required',
             'quantity' => 'required',
-            'image' => 'required|mimes:png,jpg,jpeg|max:2048',
+            'image' => 'required|mimes:png,jpg,jpeg,webp|max:2048',
             'category_id' => 'required',
             'brand_id' => 'required',
         ]);
@@ -285,7 +285,7 @@ class AdminController extends Controller
             'stock_status' => 'required',
             'featured' => 'required',
             'quantity' => 'required',
-            'image' => 'mimes:png,jpg,jpeg|max:2048',
+            'image' => 'mimes:png,jpg,jpeg,webp|max:2048',
             'category_id' => 'required',
             'brand_id' => 'required',
         ]);
