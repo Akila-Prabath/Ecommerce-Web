@@ -37,8 +37,8 @@
                 <div class="section-menu-left">
                     <div class="box-logo">
                         <a href="{{route('admin.index')}}" id="site-logo-inner">
-                            <img class="" id="logo_header" alt="" src="{{asset('images/logo/logo.png')}}"
-                                data-light="{{asset('images/logo/logo.png')}}" data-dark="images/logo/logo.png">
+                            <img class="" id="logo_header" alt="" src="{{asset('images/logo/elogo.png')}}"
+                                data-light="{{asset('images/logo/elogo.png')}}" data-dark="images/logo/elogo.png">
                         </a>
                         <div class="button-show-hide">
                             <i class="icon-menu-left"></i>
@@ -150,16 +150,16 @@
                                     </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="users.html" class="">
+                                    <a href="{{route('admin.profile')}}" class="">
                                         <div class="icon"><i class="icon-user"></i></div>
-                                        <div class="text">User</div>
+                                        <div class="text">Profile</div>
                                     </a>
                                 </li>
 
                                 <li class="menu-item">
-                                    <a href="settings.html" class="">
-                                        <div class="icon"><i class="icon-settings"></i></div>
-                                        <div class="text">Settings</div>
+                                    <a href="{{route('home.index')}}" class="">
+                                        <div class="icon"><i class="icon-home"></i></div>
+                                        <div class="text">Home</div>
                                     </a>
                                 </li>
 
@@ -167,7 +167,7 @@
                                     <form method="POST" action="{{route('logout')}}" id="logout-form">
                                         @csrf
                                     <a href="{{route('logout')}}" class="" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                        <div class="icon"><i class="icon-settings"></i></div>
+                                        <div class="icon"><i class="icon-log-out"></i></div>
                                         <div class="text">Logout</div>
                                     </a>
                                     </form>
@@ -182,9 +182,9 @@
                         <div class="wrap">
                             <div class="header-left">
                                 <a href="index-2.html">
-                                    <img class="" id="logo_header_mobile" alt="" src="images/logo/logo.png"
-                                        data-light="images/logo/logo.png" data-dark="images/logo/logo.png"
-                                        data-width="154px" data-height="52px" data-retina="images/logo/logo.png">
+                                    <img class="" id="logo_header_mobile" alt="" src="images/logo/elogo.png"
+                                        data-light="images/logo/elogo.png" data-dark="images/logo/elogo.png"
+                                        data-width="154px" data-height="52px" data-retina="images/logo/elogo.png">
                                 </a>
                                 <div class="button-show-hide">
                                     <i class="icon-menu-left"></i>
@@ -207,7 +207,7 @@
                             </div>
                             <div class="header-grid">
 
-                                <div class="popup-wrap message type-header">
+                                <!--<div class="popup-wrap message type-header">
                                     <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button"
                                             id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -272,7 +272,7 @@
                                             <li><a href="#" class="tf-button w-full">View all</a></li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div>-->
 
 
 
@@ -283,10 +283,10 @@
                                             id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                                             <span class="header-user wg-user">
                                                 <span class="image">
-                                                    <img src="images/avatar/user-1.png" alt="">
+                                                    <img src="{{asset('images/avatar')}}/{{Auth::user()->profile_photo_path}}" alt="{{Auth::user()->name}}">
                                                 </span>
                                                 <span class="flex flex-column">
-                                                    <span class="body-title mb-2">Kristin Watson</span>
+                                                    <span class="body-title mb-2">{{Auth::user()->name}}</span>
                                                     <span class="text-tiny">Admin</span>
                                                 </span>
                                             </span>
@@ -294,7 +294,7 @@
                                         <ul class="dropdown-menu dropdown-menu-end has-content"
                                             aria-labelledby="dropdownMenuButton3">
                                             <li>
-                                                <a href="#" class="user-item">
+                                                <a href="{{route('admin.profile')}}" class="user-item">
                                                     <div class="icon">
                                                         <i class="icon-user"></i>
                                                     </div>
@@ -302,15 +302,15 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#" class="user-item">
+                                                <a href="{{route('admin.contacts')}}" class="user-item">
                                                     <div class="icon">
                                                         <i class="icon-mail"></i>
                                                     </div>
                                                     <div class="body-title-2">Inbox</div>
-                                                    <div class="number">27</div>
+                                                    <div class="number"></div>
                                                 </a>
                                             </li>
-                                            <li>
+                                            <!--<li>
                                                 <a href="#" class="user-item">
                                                     <div class="icon">
                                                         <i class="icon-file-text"></i>
@@ -325,9 +325,9 @@
                                                     </div>
                                                     <div class="body-title-2">Support</div>
                                                 </a>
-                                            </li>
+                                            </li>-->
                                             <li>
-                                                <a href="login.html" class="user-item">
+                                                <a href="{{route('logout')}}" class="user-item" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                                     <div class="icon">
                                                         <i class="icon-log-out"></i>
                                                     </div>
@@ -345,7 +345,7 @@
                         @yield('content')
                         
                         <div class="bottom-page">
-                            <div class="body-text">Copyright © 2024 SurfsideMedia</div>
+                            <div class="body-text">Copyright © 2024 BabyBabble</div>
                         </div>
                     </div>
 

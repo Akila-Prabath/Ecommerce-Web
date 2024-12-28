@@ -52,14 +52,12 @@
                 <td>
                   <div class="shopping-cart__product-item__detail">
                     <h4>{{$item->name}}</h4>
-                    <ul class="shopping-cart__product-item__options">
-                      <li>Color: Yellow</li>
-                      <li>Size: L</li>
+                    <ul class="shopping-cart__product-item__options">                     
                     </ul>
                   </div>
                 </td>
                 <td>
-                  <span class="shopping-cart__product-price">${{$item->price}}</span>
+                  <span class="shopping-cart__product-price">Rs. {{$item->price}}</span>
                 </td>
                 <td>
                   <div class="qty-control position-relative">
@@ -78,7 +76,7 @@
                   </div>
                 </td>
                 <td>
-                  <span class="shopping-cart__subtotal">${{$item->subtotal}}</span>
+                  <span class="shopping-cart__subtotal">Rs. {{$item->subtotal}}</span>
                 </td>
                 <td>
                   <form method="post" action="{{route('cart.item.remove',['rowId' =>$item->rowId])}}">
@@ -90,17 +88,16 @@
                       <path d="M0.885506 0.0889838L9.74057 8.94404L8.85506 9.82955L0 0.97449L0.885506 0.0889838Z" />
                     </svg>
                   </a>
+                  </form>
                 </td>
               </tr>
               @endforeach
-
             </tbody>
           </table>
           <div class="cart-table-footer">
             <form action="#" class="position-relative bg-body">
               <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code">
-              <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit"
-                value="APPLY COUPON">
+              <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit" value="APPLY COUPON">
             </form>
             <form action="{{route('cart.empty')}}" method="POST">
             @csrf
@@ -117,21 +114,19 @@
                 <tbody>
                   <tr>
                     <th>Subtotal</th>
-                    <td>${{Cart::instance('cart')->subTotal()}}</td>
+                    <td>Rs. {{Cart::instance('cart')->subTotal()}}</td>
                   </tr>
                   <tr>
                     <th>Shipping</th>
-                    <td>
-                    Free
-                    </td>
+                    <td>Free</td>
                   </tr>
                   <tr>
                     <th>VAT</th>
-                    <td>${{Cart::instance('cart')->tax()}}</td>
+                    <td>Rs. {{Cart::instance('cart')->tax()}}</td>
                   </tr>
                   <tr>
                     <th>Total</th>
-                    <td>${{Cart::instance('cart')->total()}}</td>
+                    <td>Rs. {{Cart::instance('cart')->total()}}</td>
                   </tr>
                 </tbody>
               </table>
@@ -148,7 +143,6 @@
                 <div class="col-md-12 text-center pt-5 bp-5">
                     <p> no item founds.</p>
                     <a href="{{route('shop.index')}}" class="btn btn-info">Shop Now</a>
-
                 </div>
             </div>
         @endif

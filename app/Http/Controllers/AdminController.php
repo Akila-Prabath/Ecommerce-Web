@@ -7,10 +7,14 @@ use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Product;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Laravel\Facades\Image;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 
 class AdminController extends Controller
@@ -385,5 +389,75 @@ class AdminController extends Controller
         $query = $request->input('query');
         $results = Product::where('name','LIKE',"%{$query}%")->get()->take(8);
         return response()->json($results);
+    }
+
+    public function admin_profile(){
+        return view('admin.profile');
+    }
+
+    public function profile_update(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'sometimes|string|max:255',
+            'old_password' => 'nullable|required_with:new_password,new_password_confirmation',
+            'new_password' => 'nullable|min:8|confirmed|required_with:old_password',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator, 'profile_update');
+        }
+
+        $user = User::find(Auth::user()->id);
+
+        if ($request->filled('name') && $request->name !== $user->name) {
+            $user->name = $request->name;
+        }
+
+        if ($request->filled('old_password') && $request->filled('new_password')) {
+            if (!Hash::check($request->old_password, $user->password)) {
+                return redirect()->back()->withErrors(['old_password' => 'Your current password is incorrect.'], 'profile_update');
+            }
+            $user->password = Hash::make($request->new_password);
+        }
+
+        $user->save();
+        return back()->with('profile_update', 'Account details updated successfully!');
+    }
+
+    public function GenerateProfileImage($image, $imageName){
+        $destinationPath = public_path('images/avatar');
+        $img = Image::read($image->path());
+        $img->cover(124,124,"top");
+        $img->resize(124,124,function($constraint){
+            $constraint->aspectRatio();
+        })->save($destinationPath.'/'.$imageName);
+    }
+
+    public function profile_photo(Request $request){
+        $validator = Validator::make($request->all(), [
+            'image' => 'required|file|mimes:png,jpg,jpeg|max:2048',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator, 'photo_update');
+        }
+
+        $user = User::find(Auth::user()->id);
+
+        if($request->hasFile('image')){
+            if(File::exists(public_path('images/avatar').'/'.$user->profile_photo_path)){
+                File::delete(public_path('images/avatar').'/'.$user->profile_photo_path);
+            }
+            $image = $request->file('image');
+            $file_extention = $request->file('image')->extension();
+            $file_name = Carbon::now()->timestamp.'.'.$file_extention;
+            $this->GenerateProfileImage($image,$file_name);
+            $user->profile_photo_path = $file_name;
+
+            $user->save();
+            return back()->with('photo_update', 'Profile photo updated successfully!');
+        }
+        
+        return redirect()->back()->withErrors(['image' => 'Please upload a valid image file.'], 'photo_update');
     }
 }
