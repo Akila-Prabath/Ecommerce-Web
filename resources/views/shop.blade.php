@@ -99,7 +99,7 @@
             <div id="accordion-filter-price" class="accordion-collapse collapse show border-0"
               aria-labelledby="accordion-heading-price" data-bs-parent="#price-filters">
               <input class="price-range-slider" type="text" name="price_range" value="" data-slider-min="1"
-                data-slider-max="500" data-slider-step="5" data-slider-value="[{{$min_price}},{{$max_price}}]" data-currency="$" />
+                data-slider-max="10000" data-slider-step="5" data-slider-value="[{{$min_price}},{{$max_price}}]" data-currency="$" />
               <div class="price-range__info d-flex align-items-center mt-2">
                 <div class="me-auto">
                   <span class="text-secondary">Min Price: </span>
@@ -107,7 +107,7 @@
                 </div>
                 <div>
                   <span class="text-secondary">Max Price: </span>
-                  <span class="price-range__max">$500</span>
+                  <span class="price-range__max">$10000</span>
                 </div>
               </div>
             </div>
@@ -345,7 +345,7 @@
   <input type="hidden" name="brands" id="hdnBrands" value="{{ $f_brands }}"/>
   <input type="hidden" name="categories" id="hdnCategories" />
   <input type="hidden" name="min" id="hdnMinPrice" value="{{ $min_price ?? 1 }}">
-  <input type="hidden" name="max" id="hdnMaxPrice" value="{{ $max_price ?? 500 }}">
+  <input type="hidden" name="max" id="hdnMaxPrice" value="{{ $max_price ?? 10000 }}">
 </form> 
 
 @endsection
