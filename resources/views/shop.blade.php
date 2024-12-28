@@ -28,30 +28,16 @@
               aria-labelledby="accordion-heading-1" data-bs-parent="#categories-list">
               <div class="accordion-body px-0 pb-0 pt-3">
                 <ul class="list list-inline mb-0">
-                  <li class="list-item">
-                    <a href="#" class="menu-link py-1">Art Supplies</a>
-                  </li>
-                  <li class="list-item">
-                    <a href="#" class="menu-link py-1">Writing tools</a>
-                  </li>
-                  <li class="list-item">
-                    <a href="#" class="menu-link py-1">Educational Tools</a>
-                  </li>
-                  <li class="list-item">
-                    <a href="#" class="menu-link py-1">Organization Supplies</a>
-                  </li>
-                  <li class="list-item">
-                    <a href="#" class="menu-link py-1">Technology for Learning</a>
-                  </li>
-                  <li class="list-item">
-                    <a href="#" class="menu-link py-1">Decorative Stationaries</a>
-                  </li>
-                  <li class="list-item">
-                    <a href="#" class="menu-link py-1">Classroom Accessories</a>
-                  </li>
-                  <li class="list-item">
-                    <a href="#" class="menu-link py-1">Creative playtools</a>
-                  </li>
+                @foreach($categories as $category)
+                    <li class="list-item">
+                        <span class="menu-link py-1">
+                            <input type="checkbox" name="categories[]" value="{{ $category->id }}" class="chk-category"
+                            @if(in_array($category->id,explode(',',$f_categories))) checked="checked" @endif />
+                            {{ $category->name }}
+                        </span>
+                        <span class="text-right float-end">{{ $category->products->count() }}</span>
+                    </li>
+                @endforeach
                 </ul>
               </div>
             </div>
@@ -75,35 +61,21 @@
             <div id="accordion-filter-brand" class="accordion-collapse collapse show border-0"
               aria-labelledby="accordion-heading-brand" data-bs-parent="#brand-filters">
               <div class="search-field multi-select accordion-body px-0 pb-0">
-                <select class="d-none" multiple name="total-numbers-list">
-                  <option value="1">Atlas</option>
-                  <option value="2">Richard</option>
-                  <option value="3">ProMate</option>
-                  <option value="4">Rathna</option>
-                </select>
-                <div class="search-field__input-wrapper mb-3">
-                  <input type="text" name="search_text"
-                    class="search-field__input form-control form-control-sm border-light border-2"
-                    placeholder="Search" />
-                </div>
-                <ul class="multi-select__list list-unstyled">
-                  <li class="search-suggestion__item multi-select__item text-primary js-search-select js-multi-select">
-                    <span class="me-auto">Atlas</span>
-                    <span class="text-secondary">2</span>
-                  </li>
-                  <li class="search-suggestion__item multi-select__item text-primary js-search-select js-multi-select">
-                    <span class="me-auto">Richard</span>
-                    <span class="text-secondary">7</span>
-                  </li>
-                  <li class="search-suggestion__item multi-select__item text-primary js-search-select js-multi-select">
-                    <span class="me-auto">ProMate</span>
-                    <span class="text-secondary">10</span>
-                  </li>
-                  <li class="search-suggestion__item multi-select__item text-primary js-search-select js-multi-select">
-                    <span class="me-auto">Rathna</span>
-                    <span class="text-secondary">39</span>
-                  </li>
+                <ul class="list list-inline mb-0 brand-list">
+                  @foreach($brands as $brand)
+                  <li class="list-item">
+                     <span class="menu-link py-1">
+                         <input type="checkbox" name="brands[]" value="{{ $brand->id }}" class="chk-brand" 
+                         @if(in_array($brand->id,$f_brands ?explode(',',$f_brands):[])) checked="checked" @endif>
+                         {{ $brand->name }}
+                     </span>  
+                     <span class="text-right float-end">
+                         {{ $brand->products->count() }}
+                     </span>  
+                  </li>   
+                  @endforeach
                 </ul>
+
               </div>
             </div>
           </div>
@@ -126,16 +98,16 @@
             </h5>
             <div id="accordion-filter-price" class="accordion-collapse collapse show border-0"
               aria-labelledby="accordion-heading-price" data-bs-parent="#price-filters">
-              <input class="price-range-slider" type="text" name="price_range" value="" data-slider-min="50"
-                data-slider-max="10000" data-slider-step="5" data-slider-value="[1000,5000]" data-currency="Rs." />
+              <input class="price-range-slider" type="text" name="price_range" value="" data-slider-min="1"
+                data-slider-max="500" data-slider-step="5" data-slider-value="[{{$min_price}},{{$max_price}}]" data-currency="$" />
               <div class="price-range__info d-flex align-items-center mt-2">
                 <div class="me-auto">
                   <span class="text-secondary">Min Price: </span>
-                  <span class="price-range__min">Rs.50</span>
+                  <span class="price-range__min">$1</span>
                 </div>
                 <div>
                   <span class="text-secondary">Max Price: </span>
-                  <span class="price-range__max">Rs.10000</span>
+                  <span class="price-range__max">$500</span>
                 </div>
               </div>
             </div>
@@ -370,6 +342,10 @@
   <input type="hidden" name="page" value="{{$products->currentPage()}}">
   <input type="hidden" name="size" id="size" value="{{$size}}"/>
   <input type="hidden" name="order" id="order" value="{{$order}}"/>
+  <input type="hidden" name="brands" id="hdnBrands" value="{{ $f_brands }}"/>
+  <input type="hidden" name="categories" id="hdnCategories" />
+  <input type="hidden" name="min" id="hdnMinPrice" value="{{ $min_price ?? 1 }}">
+  <input type="hidden" name="max" id="hdnMaxPrice" value="{{ $max_price ?? 500 }}">
 </form> 
 
 @endsection
@@ -385,6 +361,42 @@
     $("#orderby").on("change", function() {
         $("#order").val($("#orderby option:selected").val());
         $("#frmfilter").submit();
+    });
+
+    $("input[name='brands[]']").on("change", function() {
+      var brands ="";
+      $("input[name='brands[]']:checked").each(function(){
+        if(brands==""){
+          brands += $(this).val();
+        }else{
+          brands += "," + $(this).val();
+        }
+      });
+
+      $("#hdnBrands").val(brands);
+      $("#frmfilter").submit();
+    });
+
+    $("input[name='categories[]']").on("change", function() {
+      var categories ="";
+      $("input[name='categories[]']:checked").each(function(){
+        if(categories==""){
+          categories += $(this).val();
+        }else{
+          categories += "," + $(this).val();
+        }
+      });
+
+      $("#hdnCategories").val(categories);
+      $("#frmfilter").submit();
+    });
+
+    $("[name='price_range']").on("slideStop", function(event) {
+      var min = event.value[0];
+      var max = event.value[1];
+      $("#hdnMinPrice").val(min);
+      $("#hdnMaxPrice").val(max);
+      $("#frmfilter").submit();
     });
 
   });  // Missing parenthesis added here
