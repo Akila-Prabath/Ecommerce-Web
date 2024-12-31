@@ -95,10 +95,10 @@
             </tbody>
           </table>
           <div class="cart-table-footer">
-            <form action="#" class="position-relative bg-body">
+            <!--<form action="#" class="position-relative bg-body">
               <input class="form-control" type="text" name="coupon_code" placeholder="Coupon Code">
               <input class="btn-link fw-medium position-absolute top-0 end-0 h-100 px-4" type="submit" value="APPLY COUPON">
-            </form>
+            </form>-->
             <form action="{{route('cart.empty')}}" method="POST">
             @csrf
             @method('DELETE')
@@ -114,19 +114,19 @@
                 <tbody>
                   <tr>
                     <th>Subtotal</th>
-                    <td>Rs. {{Cart::instance('cart')->subTotal()}}</td>
+                    <td class="text-right">Rs. {{Cart::instance('cart')->subTotal()}}</td>
                   </tr>
                   <tr>
                     <th>Shipping</th>
-                    <td>Free</td>
+                    <td class="text-right">Free</td>
                   </tr>
                   <tr>
                     <th>VAT</th>
-                    <td>Rs. {{Cart::instance('cart')->tax()}}</td>
+                    <td class="text-right">Rs. {{Cart::instance('cart')->tax()}}</td>
                   </tr>
                   <tr>
                     <th>Total</th>
-                    <td>Rs. {{Cart::instance('cart')->total()}}</td>
+                    <td class="text-right">Rs. {{Cart::instance('cart')->total()}}</td>
                   </tr>
                 </tbody>
               </table>
