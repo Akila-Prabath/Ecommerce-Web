@@ -18,7 +18,7 @@
             </p>-->
                 
             <div class="container-icon">                                 
-              <a href="account-orders.html" class="box-icon">
+              <a href="{{route('user.orders')}}" class="box-icon">
                 <i class="icon-file-text"></i>
                 <p>Orders</p>
               </a>

@@ -1,7 +1,7 @@
 <ul class="account-nav">
     <li><a href="{{route('user.index')}}" class="menu-link menu-link_us-s"><i class="icon-grid"></i>
         Dashboard</a></li>
-    <li><a href="account-orders.html" class="menu-link menu-link_us-s"><i class="icon-file-text"></i>
+    <li><a href="{{route('user.orders')}}" class="menu-link menu-link_us-s"><i class="icon-file-text"></i>
         Orders</a></li>
     <li><a href="account-address.html" class="menu-link menu-link_us-s"><i class="icon-map-pin"></i>
         Addresses</a></li>
