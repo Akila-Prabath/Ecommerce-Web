@@ -64,7 +64,7 @@
 
     .table-bordered>:not(caption)>*>* {
       border-width: inherit;
-      line-height: 32px;
+      line-height: 15px;
       font-size: 14px;
       border: 1px solid #e1e1e1;
       vertical-align: middle;
@@ -83,7 +83,7 @@
 
     .table-striped td:nth-child(1) {
       min-width: 250px;
-      padding-bottom: 7px;
+      padding-bottom: 10px;
     }
 
     .pname {
@@ -121,6 +121,9 @@
                         </div>                            
                     </div>
                     <div class="table-responsive">
+                        @if(Session::has('status'))
+                            <p class="alert alert-success">{{Session::get('status')}}</p>
+                        @endif
                         <table class="table table-striped table-bordered table-transaction">
                             <tr>
                                 <th>Order No</th>
@@ -262,9 +265,41 @@
                         </tbody>
                     </table>
                 </div> 
+                @if($order->status == 'ordered')
+                <div class="wg-box mt-5 text-right">
+                    <form action="{{route('user.order.cancel')}}" method="POST">
+                        @csrf
+                        @method('PUT')
+                        <input type="hidden" name="order_id" value="{{$order->id}}"/>
+                        <button type="button" class="btn btn-danger cancel-order">Cancel Order</button>
+                    </form>
+                </div>
+                @endif
             </div>
 
         </div>
     </section>
 </main>
 @endsection
+
+@push('scripts')
+    <script>
+        $(function() {
+            $('.cancel-order').on('click', function(e) {
+                e.preventDefault();
+                var form = $(this).closest('form');
+                swal({
+                    title: "Are you sure?",
+                    text: "Do you want to cancel this order?",
+                    type: "warning",
+                    buttons: ["No", "Yes"],
+                    confirmButtonColor: '#dc3545'
+                }).then(function(result) {
+                    if (result) {
+                        form.submit();
+                    }
+                });
+            });
+        });
+    </script>
+@endpush
