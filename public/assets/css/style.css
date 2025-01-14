@@ -7766,6 +7766,10 @@ th[align="right"] {
   .col-lg-3 {
     flex: 0 0 auto;
     width: 25%; }
+  
+  .col-lg-2_5 {
+    flex: 0 0 auto;
+    width: 20%}
 
   .col-lg-4 {
     flex: 0 0 auto;
@@ -10291,7 +10295,10 @@ textarea.form-control-lg {
 
 .product-card {
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  border: 2px solid #ddd;
+  width: 250px;
+  height: 430px; }
   .product-card .hover-container::before {
     content: '';
     display: block;
@@ -10305,6 +10312,9 @@ textarea.form-control-lg {
     opacity: 0;
     visibility: hidden;
     z-index: 1; }
+  .product-card:hover{
+    border: 2px solid black;
+  }
   .product-card:hover .pc__img-next,
   .product-card:hover .pc__img-prev,
   .product-card:hover .pc__img-second {
@@ -10384,7 +10394,7 @@ textarea.form-control-lg {
   left: 1.25rem; }
 
 .pc__info {
-  margin-top: 1rem; }
+  margin: 1rem;}
   .pc__info.hover__content {
     margin-top: 0;
     min-width: auto;
