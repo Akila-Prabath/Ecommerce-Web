@@ -10297,7 +10297,7 @@ textarea.form-control-lg {
   position: relative;
   overflow: hidden;
   border: 2px solid #ddd;
-  width: 250px;
+  width: auto;
   height: 430px; }
   .product-card .hover-container::before {
     content: '';

@@ -113,10 +113,10 @@
                                     </ul>
                                 </li>
 
-                                <li class="menu-item has-children">
+                                <!--<li class="menu-item has-children">
                                     <a href="javascript:void(0);" class="menu-item-button">
                                         <div class="icon"><i class="icon-file-plus"></i></div>
-                                        <div class="text">Order</div>
+                                        <div class="text">Orders</div>
                                     </a>
                                     <ul class="sub-menu">
                                         <li class="sub-menu-item">
@@ -130,19 +130,19 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li>-->
                                 <li class="menu-item">
-                                    <a href="slider.html" class="">
-                                        <div class="icon"><i class="icon-image"></i></div>
-                                        <div class="text">Slider</div>
+                                    <a href="{{route('admin.orders')}}" class="">
+                                        <div class="icon"><i class="icon-file-plus"></i></div>
+                                        <div class="text">Orders</div>
                                     </a>
                                 </li>
-                                <li class="menu-item">
+                                <!--<li class="menu-item">
                                     <a href="coupons.html" class="">
                                         <div class="icon"><i class="icon-grid"></i></div>
                                         <div class="text">Coupns</div>
                                     </a>
-                                </li>
+                                </li>-->
                                 <li class="menu-item">
                                     <a href="{{route('admin.contacts')}}" class="">
                                         <div class="icon"><i class="icon-mail"></i></div>

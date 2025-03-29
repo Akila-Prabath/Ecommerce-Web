@@ -398,7 +398,7 @@
         </div><!-- /.row -->
 
         <div class="text-center mt-2">
-          <a class="btn-link btn-link_lg default-underline text-uppercase fw-medium" href="#">Load More</a>
+          <a class="btn-link btn-link_lg default-underline text-uppercase fw-medium" href="{{route('shop.index')}}">Load More</a>
         </div>
       </section>
     </div>

@@ -165,7 +165,7 @@
         </clipPath>
       </defs>
     </symbol>
-    <symbol id="icon_hanger" viewBox="0 0 18 18">
+    <symbol id="icon_shop" viewBox="0 0 18 18">
       <g clip-path="url(#clip0_171_678)">
         <path
           d="M16.8037 12.0285L11.9362 9.10027C11.2525 8.68897 10.492 8.42791 9.70506 8.32972V7.59625C9.70506 7.18302 9.94168 6.79836 10.3225 6.59223C11.2687 6.08013 11.8258 5.09383 11.7763 4.01814C11.7108 2.59335 10.5588 1.43964 9.13226 1.37414C7.53307 1.30122 6.2246 2.5744 6.2246 4.14846C6.2246 4.53683 6.53949 4.85159 6.92772 4.85159C7.31609 4.85159 7.63085 4.53683 7.63085 4.14846C7.63085 3.37008 8.2778 2.74249 9.06758 2.77888C9.76659 2.81101 10.3394 3.38381 10.3715 4.08282C10.3961 4.61483 10.1208 5.10249 9.65302 5.35558C8.81778 5.80767 8.29881 6.66625 8.29881 7.59625V8.32931C7.51521 8.42654 6.75743 8.6854 6.07559 9.09341L1.20123 12.0104H1.2011C0.461305 12.4532 0.000978114 13.2638 1.68088e-05 14.1261C-0.00149381 15.4906 1.1014 16.5962 2.46604 16.5979L15.5281 16.6131H15.5311C16.8911 16.6131 17.9984 15.5074 18 14.147C18.001 13.2848 17.5426 12.4729 16.8037 12.0285ZM15.5311 15.2069C15.5307 15.2069 15.5302 15.2069 15.5299 15.2069L2.46782 15.1916C1.8817 15.191 1.40558 14.7137 1.40627 14.1278C1.40668 13.7566 1.60484 13.4076 1.92331 13.217H1.92317L6.79767 10.3001C8.15613 9.48713 9.85324 9.48837 11.2113 10.3052L16.0789 13.2335C16.3968 13.4248 16.5942 13.7743 16.5938 14.1453C16.5931 14.7309 16.1165 15.2069 15.5311 15.2069Z"
@@ -177,6 +177,10 @@
         </clipPath>
       </defs>
     </symbol>
+    <symbol id="icon_shopping_bag" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M20 7h-3V5a5 5 0 0 0-10 0v2H4a1 1 0 0 0-1 1v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1ZM8 5a3 3 0 1 1 6 0v2H8V5Zm12 15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V9h14Z"/>
+    </symbol>
+    
     <symbol id="icon_sharing" viewBox="0 0 16 19">
       <path
         d="M12.8 11.8044C11.9413 11.8044 11.1606 12.1445 10.5853 12.6969L7.16295 10.5766C7.35822 10.1241 7.46667 9.6256 7.46667 9.10222C7.46667 8.57885 7.35822 8.08039 7.16292 7.62788L10.5853 5.50759C11.1606 6.05995 11.9413 6.4 12.8 6.4C14.5645 6.4 16 4.96448 16 3.2C16 1.43552 14.5645 0 12.8 0C11.0355 0 9.6 1.43552 9.6 3.2C9.6 3.72092 9.72519 4.21316 9.94695 4.64825L6.60469 6.71893C5.91932 5.89461 4.88661 5.36889 3.73333 5.36889C1.67477 5.36889 0 7.04366 0 9.10222C0 11.1608 1.67477 12.8356 3.73333 12.8356C4.88661 12.8356 5.91932 12.3098 6.60469 11.4855L9.94695 13.5562C9.72519 13.9913 9.6 14.4835 9.6 15.0044C9.6 16.7689 11.0355 18.2044 12.8 18.2044C14.5645 18.2044 16 16.7689 16 15.0044C16 13.24 14.5645 11.8044 12.8 11.8044ZM12.8 1.06667C13.9763 1.06667 14.9333 2.02368 14.9333 3.2C14.9333 4.37632 13.9763 5.33333 12.8 5.33333C11.6237 5.33333 10.6667 4.37632 10.6667 3.2C10.6667 2.02368 11.6237 1.06667 12.8 1.06667ZM3.73333 11.7689C2.26293 11.7689 1.06667 10.5726 1.06667 9.10222C1.06667 7.63182 2.26293 6.43556 3.73333 6.43556C5.20373 6.43556 6.4 7.63182 6.4 9.10222C6.4 10.5726 5.20373 11.7689 3.73333 11.7689ZM12.8 17.1378C11.6237 17.1378 10.6667 16.1808 10.6667 15.0044C10.6667 13.8281 11.6237 12.8711 12.8 12.8711C13.9763 12.8711 14.9333 13.8281 14.9333 15.0044C14.9333 16.1808 13.9763 17.1378 12.8 17.1378Z"
@@ -351,9 +355,9 @@
             <li class="navigation__item">
               <a href="{{route('cart.index')}}" class="navigation__link">Cart</a>
             </li>
-            <li class="navigation__item">
+            <!--<li class="navigation__item">
               <a href="about.html" class="navigation__link">About</a>
-            </li>
+            </li>-->
             <li class="navigation__item">
               <a href="{{route('home.contact')}}" class="navigation__link">Contact</a>
             </li>
@@ -438,9 +442,9 @@
             <li class="navigation__item">
               <a href="{{route('cart.index')}}" class="navigation__link">Cart</a>
             </li>
-            <li class="navigation__item">
+            <!--<li class="navigation__item">
               <a href="about.html" class="navigation__link">About</a>
-            </li>
+            </li>-->
             <li class="navigation__item">
               <a href="{{route('home.contact')}}" class="navigation__link">Contact</a>
             </li>
@@ -593,7 +597,7 @@
             <li class="sub-menu__item"><a href="{{route('home.index')}}" class="menu-link menu-link_us-s">Home</a></li>
             <li class="sub-menu__item"><a href="{{route('shop.index')}}" class="menu-link menu-link_us-s">Shop</a></li>
             <li class="sub-menu__item"><a href="{{route('cart.index')}}" class="menu-link menu-link_us-s">Cart</a></li>
-            <li class="sub-menu__item"><a href="blog_list1.html" class="menu-link menu-link_us-s">About Us</a></li>
+            <!--<li class="sub-menu__item"><a href="blog_list1.html" class="menu-link menu-link_us-s">About Us</a></li>-->
             <li class="sub-menu__item"><a href="{{route('home.contact')}}" class="menu-link menu-link_us-s">Contact Us</a></li>
           </ul>
         </div>
@@ -647,23 +651,25 @@
       </div>
 
       <div class="col-4">
-        <a href="{{route('home.index')}}" class="footer-mobile__link d-flex flex-column align-items-center">
+        <a href="{{route('shop.index')}}" class="footer-mobile__link d-flex flex-column align-items-center">
           <svg class="d-block" width="18" height="18" viewBox="0 0 18 18" fill="none"
             xmlns="http://www.w3.org/2000/svg">
-            <use href="#icon_hanger" />
+            <use href="#icon_shopping_bag" />
           </svg>
           <span>Shop</span>
         </a>
       </div>
 
       <div class="col-4">
-        <a href="{{route('home.index')}}" class="footer-mobile__link d-flex flex-column align-items-center">
+        <a href="{{route('wishlist.index')}}" class="footer-mobile__link d-flex flex-column align-items-center">
           <div class="position-relative">
             <svg class="d-block" width="18" height="18" viewBox="0 0 20 20" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <use href="#icon_heart" />
             </svg>
-            <span class="wishlist-amount d-block position-absolute js-wishlist-count">3</span>
+            @if(Cart::instance('wishlist')->content()->count() > 0)
+          <span class="cart-amount d-block position-absolute js-cart-items-count">{{Cart::instance('wishlist')->content()->count()}}</span>
+          @endif 
           </div>
           <span>Wishlist</span>
         </a>

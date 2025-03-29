@@ -631,6 +631,9 @@
 .icon-rss:before {
   content: "\e9e6";
 }
+.icon-rupee-sign:before {
+  content: '\20A8';
+}
 .icon-save:before {
   content: "\e9e7";
 }
